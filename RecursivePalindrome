@@ -1,0 +1,31 @@
+import java.util.*;
+
+class RecursivePalindrome{
+    public static boolean isPalindrome(String cleaned,int start,int end)
+    {
+        if(start>=end)
+            return true;
+        if(cleaned.charAt(start)!=cleaned.charAt(end))
+        
+            return false;
+        
+        else
+            return isPalindrome(cleaned,start+1,end-1);
+        
+    }
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("enter the string to be checked as palindrome: ");
+        String name=sc.nextLine();
+        String cleaned=name.toLowerCase().replaceAll("[^a-z,0-9]","");
+        
+        if(isPalindrome(cleaned,0,cleaned.length()-1))
+        {
+            System.out.println("it is a palindrome "+name);
+        }
+        else{
+            System.out.println("it is not a palindrome "+name);
+        }
+    }
+}
