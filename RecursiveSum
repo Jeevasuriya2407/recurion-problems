@@ -1,0 +1,18 @@
+import java.util.*;
+
+class RecursiveSum{
+    public static int Sum(int n)
+    {
+        if(n==1)
+        return 1;
+        else
+        return n+Sum(n-1);
+    }
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("enter the range of numbers to be sumed: ");
+        int range=sc.nextInt();
+        System.out.println("the sum of range of numbers are "+Sum(range));
+    }
+}
